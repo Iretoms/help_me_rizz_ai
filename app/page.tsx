@@ -1,19 +1,15 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <>
       <div className="bg-slate900 min-h-screen px-8 md:px-0 flex flex-col justify-center items-center text-textGray">
-        {/* Background Gradient (Optional) */}
-        {/* <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-indigo-900 to-slate-800"></div> */}
-
-        {/* Header */}
-        <h1 className="text-5xl font-bold mb-8">Upgrade Your Dating Game!</h1>
-
-        {/* Illustration */}
-        <img
-          src="/undraw_confident_man.svg"
-          alt="Confident person smiling"
-          className="w-64 mb-8"
-        />
+        <div className="flex w-full justify-center gap-8 items-center">
+          <h1 className="text-5xl font-bold mb-8">
+            Upgrade Your <br /> Dating Game!
+          </h1>
+          <Image src="/bubbleChat.png" alt="chat" width={400} height={400} />
+        </div>
 
         {/* Subheading */}
         <p className="text-lg font-medium mb-8">

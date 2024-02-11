@@ -18,12 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body >
-        <main className="flex flex-col gap-8  items-center  bg-slate900">
-          <Header />
+      <body>
+        <Header />
+        <main className="flex flex-col gap-8 px-14  bg-slate900">
           {children}
-          <Footer />
         </main>
+        <Footer />
       </body>
     </html>
   );
