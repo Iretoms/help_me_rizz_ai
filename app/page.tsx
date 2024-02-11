@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-      <div className="bg-slate-900 min-h-screen flex flex-col justify-center items-center text-white">
+      <div className="bg-slate900 min-h-screen px-8 md:px-0 flex flex-col justify-center items-center text-textGray">
         {/* Background Gradient (Optional) */}
         {/* <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-indigo-900 to-slate-800"></div> */}
 

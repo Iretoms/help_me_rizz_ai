@@ -19,13 +19,13 @@ const config = {
     },
     extend: {
       colors: {
-        coral: "#f73f52",
+        coral: "#CC1515",
         coralDark: "#e84c39",
-        slate900: "#1f262d",
+        slate900: "#1B1C1D",
         charcoal: "#2c3338",
         olive: "#81b29a",
         blueGrey: "#6f788a",
-        indigo: "#2e4053",
+        textGray: "#fffff4",
         forestGreen: "#495a3c",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

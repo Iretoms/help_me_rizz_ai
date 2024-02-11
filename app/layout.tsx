@@ -7,7 +7,7 @@ import Footer from "@/components/shared/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "HELP MY RIZZ",
+  title: "ROMI AI",
   description: "Generated Rizz response during texts to save your dating life",
 };
 
@@ -18,11 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Header/>
-        {children}
-        <Footer/>
-        </body>
+      <body >
+        <main className="flex flex-col gap-8  items-center  bg-slate900">
+          <Header />
+          {children}
+          <Footer />
+        </main>
+      </body>
     </html>
   );
 }
