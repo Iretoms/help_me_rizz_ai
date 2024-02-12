@@ -8,7 +8,10 @@ import {
 
 const Faqs = () => {
   return (
-    <div className="border-[1px] border-opacity-30 border-coralDark p-10 rounded-3xl">
+    <div className="border-[1px] border-opacity-50 border-coralDark p-10 rounded-3xl">
+      <h1 className="text-coralDark font-extrabold text-4xl mb-10 md:mb-0">
+        FAQ'S
+      </h1>
       <Accordion type="single" collapsible className="w-[70vw] text-white">
         <AccordionItem value="item-1">
           <AccordionTrigger>What is a Rizz?</AccordionTrigger>

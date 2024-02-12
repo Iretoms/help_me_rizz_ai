@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex  flex-col items-center">
-      <div className="flex flex-col md:flex-row items-center justify-between">
+    <div className="flex mt-12 gap-10 flex-col items-center px-6">
+      <div className="flex flex-col md:flex-row  justify-between ">
         <div className="flex relative  overflow-hidden md:p-5 flex-col gap-4 items-start justify-start w-fit">
           <h1 className="text-textGray font-extrabold text-5xl md:text-6xl">
             Upgrade Your <br /> <span className="text-coralDark">Texting</span>{" "}
@@ -18,7 +18,7 @@ export default function Home() {
             little rizz into that conversation
           </p>
           <Image
-            className="absolute top-0 left-20 opacity-10 md:opacity-10"
+            className="absolute top-0 left-20 opacity-20 md:opacity-20"
             src="/spiral_alt.svg"
             alt="spiral"
             width={800}
@@ -27,7 +27,7 @@ export default function Home() {
         </div>
         <div className="object-contain">
           <Image
-            className="object-contain w-[100%]"
+            className="object-contain  md:w-[90%]"
             src="/bubble.svg"
             alt="chat"
             width={300}

@@ -21,7 +21,7 @@ const config = {
       colors: {
         coral: "#57291E",
         coralDark: "#932D26",
-        slate900: "#000",
+        slate900: "#09090B",
         charcoal: "#2c3338",
         olive: "#81b29a",
         blueGrey: "#6f788a",
