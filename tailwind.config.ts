@@ -20,7 +20,7 @@ const config = {
     extend: {
       colors: {
         coral: "#57291E",
-        coralDark: "#e84c39",
+        coralDark: "#932D26",
         slate900: "#000",
         charcoal: "#2c3338",
         olive: "#81b29a",

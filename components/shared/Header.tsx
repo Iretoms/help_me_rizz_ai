@@ -3,7 +3,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="flex justify-between py-4 gap-10 items-center sticky top-0 bg-slate900">
+    <div className="flex justify-between z-20 w-full py-4 px-4 md:px-10  items-center sticky top-0 bg-slate900">
       <div className="text-sm flex items-baseline gap-2 text-white font-bold">
         <Image
           className="object-contain"

@@ -18,12 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <main className="overflow-hidden flex flex-col gap-8 px-8 md:px-20  bg-slate900">
-          <Header />
-          {children}
-          <Footer />
-        </main>
+      <body className="overflow-x-hidden bg-slate900 px-10 ">
+        <Header />
+        <main className="flex flex-col ">{children}</main>
+        <Footer />
       </body>
     </html>
   );
