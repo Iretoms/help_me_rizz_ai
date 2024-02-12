@@ -19,11 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main className="flex flex-col gap-8 px-14  bg-slate900">
+        <main className="overflow-hidden flex flex-col gap-8 px-8 md:px-20  bg-slate900">
+          <Header />
           {children}
+          <Footer />
         </main>
-        <Footer />
       </body>
     </html>
   );
