@@ -16,10 +16,8 @@ const Header = () => {
           RUMI <span className="text-coralDark">AI</span>{" "}
         </p>
       </div>
-
-      {/* Signup Button */}
       <button className="flex justify-center items-center bg-textGray text-black font-bold py-2 px-4 rounded-xl w-fit  shadow-md text-sm">
-        Sign Up
+        Log In
       </button>
     </div>
   );
