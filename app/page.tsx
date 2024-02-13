@@ -1,5 +1,7 @@
 import AiOption from "@/components/shared/AiOption";
 import Faqs from "@/components/shared/Faqs";
+import HoverCard from "@/components/shared/HoverCard";
+import Test from "@/components/shared/HoverCard";
 import Testimonial from "@/components/shared/Testimonial";
 import Image from "next/image";
 

@@ -4,7 +4,8 @@ import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 
-const inter = Anton({ subsets: ["latin"] , weight:'400' });
+
+const inter = Anton({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "RUMI AI",

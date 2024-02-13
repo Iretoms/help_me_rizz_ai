@@ -1,5 +1,7 @@
+'use client'
 import React from "react";
 import Link from "next/link";
+import HoverCard from "./HoverCard";
 
 const AiOption = () => {
   return (
@@ -20,7 +22,7 @@ const AiOption = () => {
         >
           <div>Give Me Date Night Ideas</div>
         </Link>
-     
+
         <Link
           className="bg-coralDark cursor-pointer font-bold rounded-2xl p-10 md:p-2 flex justify-center items-center flex-grow"
           href="/icebreaker"
@@ -40,6 +42,7 @@ const AiOption = () => {
           <div>Banger pickup line</div>
         </Link>
       </div>
+      <HoverCard text="Banger pickup line" />
     </div>
   );
 };

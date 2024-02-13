@@ -1,5 +1,7 @@
+'use client'
 import Image from "next/image";
 import React from "react";
+import HoverCard from "./HoverCard";
 
 const Header = () => {
   return (
@@ -16,9 +18,10 @@ const Header = () => {
           RUMI <span className="text-coralDark">AI</span>{" "}
         </p>
       </div>
-      <button className="flex justify-center items-center bg-textGray text-black font-bold py-2 px-4 rounded-xl w-fit  shadow-md text-sm">
+      {/* <button className="flex justify-center items-center bg-textGray text-black font-bold py-2 px-4 rounded-xl w-fit  shadow-md text-sm">
         Log In
-      </button>
+      </button> */}
+      <HoverCard text="Log In"/>
     </div>
   );
 };
