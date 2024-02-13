@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Anton } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Anton({ subsets: ["latin"] , weight:'400' });
 
 export const metadata: Metadata = {
   title: "RUMI AI",
@@ -19,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="overflow-x-hidden bg-slate900">
-        <Header />
-        <main className="flex flex-col ">{children}</main>
-        <Footer />
+        <div className={inter.className}>
+          <Header />
+          <main className="flex flex-col">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
