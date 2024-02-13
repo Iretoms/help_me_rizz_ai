@@ -25,13 +25,13 @@ export default function Home() {
             height={800}
           />
         </div>
-        <div className="object-contain">
+        <div className="object-contain flex-1">
           <Image
             className="object-contain  md:w-[90%]"
             src="/bubble.svg"
             alt="chat"
-            width={300}
-            height={300}
+            width={600}
+            height={600}
           />
         </div>
       </div>

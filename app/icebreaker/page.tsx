@@ -8,6 +8,14 @@ const Icebreaker = () => {
         <Skeleton className="h-10 w-10  bg-[#332C39] rounded-full" />
         <Skeleton className="h-6 w-[60%]  bg-[#332C39] rounded-2xl" />
         <Skeleton className="h-6 w-[60%]  bg-[#332C39] rounded-2xl" />
+        <Skeleton className="h-6 w-[60%]  bg-[#332C39] rounded-2xl" />
+        <Skeleton className="h-6 w-[60%]  bg-[#332C39] rounded-2xl" />
+        <Skeleton className="h-6 w-[60%]  bg-[#332C39] rounded-2xl" />
+        <Skeleton className="h-6 w-[60%]  bg-[#332C39] rounded-2xl" />
+        <Skeleton className="h-6 w-[60%]  bg-[#332C39] rounded-2xl" />
+        <Skeleton className="h-6 w-[60%]  bg-[#332C39] rounded-2xl" />
+        <Skeleton className="h-6 w-[60%]  bg-[#332C39] rounded-2xl" />
+        <Skeleton className="h-6 w-[60%]  bg-[#332C39] rounded-2xl" />
       </div>
     </div>
   );

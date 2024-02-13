@@ -66,7 +66,6 @@ const Footer = () => {
               height={20}
             />
           </a>
-          {/* Add more social media icons as needed */}
         </div>
       </div>
       <Image

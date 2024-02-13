@@ -7,7 +7,7 @@ import Footer from "@/components/shared/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ROMI AI",
+  title: "RUMI AI",
   description: "Generated Rizz response during texts to save your dating life",
 };
 

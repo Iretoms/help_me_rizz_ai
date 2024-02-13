@@ -15,9 +15,9 @@ const Testimonial = () => {
       </h1> */}
       <Carousel className="w-full max-w-xs border">
         <CarouselContent className="flex aspect-square items-center justify-center p-6 text-textGray">
-          <CarouselItem className="basis-1/3">One day</CarouselItem>
-          <CarouselItem className="basis-1/3">Tue day</CarouselItem>
-          <CarouselItem className="basis-1/3">Wed day</CarouselItem>
+          <CarouselItem className="">One day</CarouselItem>
+          <CarouselItem className="">Tue day</CarouselItem>
+          <CarouselItem className="">Wed day</CarouselItem>
         </CarouselContent>
         <CarouselPrevious className="text-textGray" />
         <CarouselNext className="text-textGray" />
