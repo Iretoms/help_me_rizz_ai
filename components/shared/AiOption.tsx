@@ -9,40 +9,39 @@ const AiOption = () => {
       <h1 className="text-white font-extrabold text-4xl mb-10 md:mb-0">
         Try For Free
       </h1>
-      <div className=" text-white text-extrabold w-[90vw] md:w-[70vw] md:mt-12  flex flex-wrap justify-center gap-4 md:gap-2 min-h-[21rem] rounded-2xl relative">
+      <div className=" text-black  text-extrabold w-[90vw] md:w-[70vw] md:mt-12  flex flex-wrap justify-center gap-4 md:gap-4 min-h-[21rem] rounded-2xl relative">
         <Link
-          className="bg-coralDark cursor-pointer font-bold rounded-2xl flex justify-center items-center flex-grow p-12"
+          className="cursor-pointer font-bold rounded-2xl flex justify-center items-center"
           href="/icebreaker"
         >
-          <div>Unleash awesome icebreakers</div>
+          <HoverCard text="Unleash Awesome Icebreakers" />
         </Link>
         <Link
-          className="bg-white cursor-pointer font-bold text-black rounded-2xl p-10 flex justify-center items-center flex-grow"
-          href="/dateNight"
-        >
-          <div>Give Me Date Night Ideas</div>
-        </Link>
-
-        <Link
-          className="bg-coralDark cursor-pointer font-bold rounded-2xl p-10 md:p-2 flex justify-center items-center flex-grow"
+          className="cursor-pointer font-bold rounded-2xl flex justify-center items-center"
           href="/icebreaker"
         >
-          <div>Tingle their spine with flirty response</div>
+          <HoverCard text="Give Me Date Night Ideas" />
         </Link>
         <Link
-          className="bg-white cursor-pointer font-bold text-black rounded-2xl flex justify-center items-center flex-grow p-12"
+          className="cursor-pointer font-bold rounded-2xl flex justify-center items-center"
           href="/icebreaker"
         >
-          <div>They said this, what should i say next</div>
+          <HoverCard text="Tingle their spine with flirty response" />
         </Link>
         <Link
-          className="bg-coralDark cursor-pointer font-bold rounded-2xl flex justify-center items-center flex-grow p-6"
-          href="/pickupLine"
+          className="cursor-pointer font-bold rounded-2xl flex justify-center items-center"
+          href="/icebreaker"
         >
-          <div>Banger pickup line</div>
+          <HoverCard text="They said this, what should i say next" />
         </Link>
+        <Link
+          className="cursor-pointer font-bold rounded-2xl flex justify-center items-center"
+          href="/icebreaker"
+        >
+          <HoverCard text="Banger pickup line" />
+        </Link>
+        
       </div>
-      <HoverCard text="Banger pickup line" />
     </div>
   );
 };

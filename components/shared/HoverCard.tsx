@@ -5,16 +5,13 @@ interface HoverCardProps {
   text: string;
 }
 
-const HoverCard: React.FC<HoverCardProps> = ({text}) => {
+const HoverCard: React.FC<HoverCardProps> = ({ text }) => {
   const [isHovered, setIsHovered] = useState(false);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
   const cardVariants = {
-    hovered: {
-      // scale: 1.2,
-    },
-  
+    hovered: {},
   };
 
   const ballVariants = {
@@ -22,9 +19,9 @@ const HoverCard: React.FC<HoverCardProps> = ({text}) => {
     visible: {
       scale: 100,
       transition: {
-        duration: 5,
-        ease: "easeOut",
-        type: "tween",
+        duration: 3,
+        ease: "easeInOut",
+        type: "spring",
       },
     },
   };
@@ -40,13 +37,13 @@ const HoverCard: React.FC<HoverCardProps> = ({text}) => {
   const handleHoverEnd = () => {
     setIsHovered(false);
   };
-    const calculateDimensions = () => {
-      const textLength = text ? text.length:0
-      const width = textLength * 10; // Assuming each character takes 10px width
-      const height = 30; // Assuming a fixed height
-      return { width, height };
-    };
-    const { width, height } = calculateDimensions();
+  const calculateDimensions = () => {
+    const textLength = text ? text.length : 0;
+    const width = textLength * 10; 
+    const height = 30; 
+    return { width, height };
+  };
+  const { width, height } = calculateDimensions();
 
   return (
     <div
@@ -69,7 +66,7 @@ const HoverCard: React.FC<HoverCardProps> = ({text}) => {
         animate={isHovered ? "visible" : "hidden"}
         exit="hidden"
       >
-        <div className="w-2 h-2 bg-white rounded-full"></div>
+        <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
       </motion.div>
 
       <motion.div
