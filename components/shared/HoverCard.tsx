@@ -1,11 +1,25 @@
 import React, { useState } from "react";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 
 interface HoverCardProps {
   text: string;
+  divColor?: string;
+  ballColor?: string;
+  textColor?: string;
+  width?: number;
+  height?: number;
+  padding?: string;
 }
 
-const HoverCard: React.FC<HoverCardProps> = ({ text }) => {
+const HoverCard: React.FC<HoverCardProps> = ({
+  text,
+  divColor = "coralDark",
+  ballColor = "gray-300",
+  textColor = "white",
+  width = "100",
+  height = "100",
+  padding = "0",
+}) => {
   const [isHovered, setIsHovered] = useState(false);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -37,18 +51,11 @@ const HoverCard: React.FC<HoverCardProps> = ({ text }) => {
   const handleHoverEnd = () => {
     setIsHovered(false);
   };
-  const calculateDimensions = () => {
-    const textLength = text ? text.length : 0;
-    const width = textLength * 10; 
-    const height = 30; 
-    return { width, height };
-  };
-  const { width, height } = calculateDimensions();
 
   return (
     <div
-      className="relative  bg-coralDark rounded-xl cursor-pointer overflow-hidden"
-      style={{ width, height }}
+      className={`relative bg-${divColor} rounded-xl cursor-pointer overflow-hidden`}
+      style={{ width, height, padding }}
       onMouseEnter={handleHoverStart}
       onMouseMove={(event) => {
         if (isHovered) {
@@ -66,7 +73,7 @@ const HoverCard: React.FC<HoverCardProps> = ({ text }) => {
         animate={isHovered ? "visible" : "hidden"}
         exit="hidden"
       >
-        <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+        <div className={`w-2 h-2 bg-${ballColor} rounded-full`}></div>
       </motion.div>
 
       <motion.div
@@ -74,6 +81,7 @@ const HoverCard: React.FC<HoverCardProps> = ({ text }) => {
         variants={cardVariants}
         animate={isHovered ? "hovered" : "normal"}
         transition={{ duration: 0.1 }}
+        style={{ color: isHovered ? "black" : textColor }}
       >
         {text}
       </motion.div>

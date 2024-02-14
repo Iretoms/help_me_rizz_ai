@@ -21,7 +21,14 @@ const Header = () => {
       {/* <button className="flex justify-center items-center bg-textGray text-black font-bold py-2 px-4 rounded-xl w-fit  shadow-md text-sm">
         Log In
       </button> */}
-      <HoverCard text="Log In"/>
+      <HoverCard
+        divColor="white"
+        ballColor="coralDark"
+        textColor="coralDark"
+        width={150}
+        height={40}
+        text="Log In"
+      />
     </div>
   );
 };

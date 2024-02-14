@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Anton } from "next/font/google";
+import { Kanit} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 
 
-const inter = Anton({ subsets: ["latin"], weight: "400" });
+const inter = Kanit({ subsets: ["latin"], weight: ['100','300',"400"] });
 
 export const metadata: Metadata = {
   title: "RUMI AI",
