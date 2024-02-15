@@ -13,11 +13,11 @@ interface HoverCardProps {
 
 const HoverCard: React.FC<HoverCardProps> = ({
   text,
-  divColor = "coralDark",
-  ballColor = "gray-300",
-  textColor = "white",
-  width = "100",
-  height = "100",
+  divColor,
+  ballColor,
+  textColor,
+  width,
+  height,
   padding = "0",
 }) => {
   const [isHovered, setIsHovered] = useState(false);

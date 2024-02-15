@@ -5,7 +5,7 @@ const openai = new OpenAI({
   dangerouslyAllowBrowser: true,
 });
 
-export const icebreaker = async () => {
+export const icebreaker = async (bioInput: string) => {
   try {
     const completion = await openai.chat.completions.create({
       messages: [
@@ -30,15 +30,19 @@ export const icebreaker = async () => {
         },
         {
           role: "user",
-          content:
-            "I want straight answers and do not include the word icebreaker or its synomym anywhere in your response .Give me ideas of icebreakers on i can use on a crush, this is their bio 'A walking paradox, lover of beautiful things, and professional ranter. You could call me a writer too.', give me the ideas in a list",
+          content: `Give me ideas of icebreakers on i can use on a crush, this is their bio ${bioInput}.List the ideas only`,
         },
       ],
       model: "gpt-3.5-turbo",
       temperature: 0.9,
     });
 
-    return completion.choices[0].message.content
+    const responseText = completion.choices[0].message.content;
+    const icebreakerIdeas = responseText
+      .split(/\d+\./)
+      .slice(1)
+      .map((item) => item.trim());
+      return icebreakerIdeas
   } catch (error) {
     console.log(error);
   }
