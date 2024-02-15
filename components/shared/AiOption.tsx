@@ -5,7 +5,7 @@ import HoverCard from "./HoverCard";
 
 const AiOption = () => {
   return (
-    <div>
+    <div className="">
       <h1 className="text-white font-extrabold text-4xl mb-10 md:mb-0">
         Try For Free
       </h1>
