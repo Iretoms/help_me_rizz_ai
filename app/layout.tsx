@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Kanit} from "next/font/google";
+import { Kanit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
-
-const inter = Kanit({ subsets: ["latin"], weight: ['100','300',"400"] });
+const inter = Kanit({ subsets: ["latin"], weight: ["100", "300", "400"] });
 
 export const metadata: Metadata = {
   title: "RUMI AI",
@@ -23,6 +23,8 @@ export default function RootLayout({
         <div className={inter.className}>
           <Header />
           <main className="flex flex-col">{children}</main>
+          <Toaster />
+
           <Footer />
         </div>
       </body>

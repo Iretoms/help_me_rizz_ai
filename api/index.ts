@@ -39,9 +39,9 @@ export const icebreaker = async (bioInput: string) => {
 
     const responseText = completion.choices[0].message.content;
     const icebreakerIdeas = responseText
-      .split(/\d+\./)
+      ?.split(/\d+\./)
       .slice(1)
-      .map((item) => item.trim());
+      .map((item) => item.trim()).slice(0,4);
       return icebreakerIdeas
   } catch (error) {
     console.log(error);
