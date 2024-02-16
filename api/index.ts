@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+import { icebreakerPrompts , dateNightPrompts } from "@/constant";
 
 const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
@@ -7,22 +8,16 @@ const openai = new OpenAI({
 
 export const icebreaker = async (bioInput: string) => {
   try {
+    const randomPrompt =
+      icebreakerPrompts[Math.floor(Math.random() * icebreakerPrompts.length)];
     const completion = await openai.chat.completions.create({
       messages: [
-        {
-          role: "system",
-          content: "You are a relationship and dating coach.",
-        },
         {
           role: "system",
           content:
             "You have the persona of a funny and witty person when you write, even a little sarcastic",
         },
-        {
-          role: "system",
-          content:
-            "As an expert relationship coach you are also the best pickup artist who usually make peaple laugh with your creative use of words.",
-        },
+
         {
           role: "system",
           content:
@@ -30,19 +25,51 @@ export const icebreaker = async (bioInput: string) => {
         },
         {
           role: "user",
-          content: `Give me ideas of icebreakers on i can use on a crush, this is their bio ${bioInput}.List the ideas only`,
+          content: `${randomPrompt} Here's the bio of my crush: ${bioInput}. List the ideas only.`,
         },
       ],
       model: "gpt-3.5-turbo",
-      temperature: 0.9,
+      temperature: 0.1,
     });
 
     const responseText = completion.choices[0].message.content;
     const icebreakerIdeas = responseText
       ?.split(/\d+\./)
       .slice(1)
-      .map((item) => item.trim()).slice(0,4);
-      return icebreakerIdeas
+      .map((item) => item.trim())
+      .slice(0, 4);
+    return icebreakerIdeas;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const dateNight = async () => {
+  try {
+    const randomPrompt =
+      dateNightPrompts[Math.floor(Math.random() * dateNightPrompts.length)];
+    const completion = await openai.chat.completions.create({
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are a relationship coach and expert who gives wonderful date night advices to old and new couples to spice up their love life",
+        },
+        {
+          role: "user",
+          content: `Give me ideas for date nights with this ${randomPrompt}. List the ideas only.`,
+        },
+      ],
+      model: "gpt-3.5-turbo",
+      temperature: 0.1,
+    });
+
+    const responseText = completion.choices[0].message.content;
+    const dateNightIdeas = responseText
+      ?.split(/\d+\./)
+      .slice(1)
+      .map((item) => item.trim())
+      .slice(0, 4);
+    return dateNightIdeas;
   } catch (error) {
     console.log(error);
   }

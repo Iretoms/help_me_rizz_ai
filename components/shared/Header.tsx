@@ -27,7 +27,7 @@ const Header = () => {
       <HoverCard
         divColor="white"
         ballColor="coralDark"
-        textColor="coralDark"
+        textColor="black"
         width={150}
         height={40}
         text="Log In"

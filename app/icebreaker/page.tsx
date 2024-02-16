@@ -82,7 +82,7 @@ const Icebreaker = () => {
           </div>
         )}
       </div>
-      <div className="flex w-[70vw] gap-10  items-center space-x-2">
+      <div className="flex flex-col md:flex-row w-[70vw] gap-10  items-center space-x-2">
         <Input
           className="text-white border-opacity-20 rounded-xl border-white placeholder:opacity-30"
           type="email"
@@ -93,7 +93,7 @@ const Icebreaker = () => {
           className="bg-white px-10 rounded-xl hover:text-white"
           onClick={fetchIcebreaker}
         >
-          {loading ? "Icebreaking" : "Send"}
+          {loading ? "Icebreaking" : "Rumi it"}
         </Button>
       </div>
     </div>

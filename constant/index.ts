@@ -34,3 +34,46 @@ export const testimonials = [
     location: "London, UK",
   },
 ];
+
+export const icebreakerPrompts = [
+  // Scenario-Based Prompts
+  "You're at a party and spot your crush across the room. Come up with a hilariously cheesy icebreaker to get their attention.",
+  "Imagine you're stranded on a desert island with your crush. What's the funniest pick-up line you can think of to break the ice?",
+  "Pretend you're at a speed-dating event and your crush is your next date. Write a witty and unexpected introduction to start the conversation.",
+
+  // Role-Playing Prompts
+  "You're a quirky superhero trying to impress your crush at a costume party. Create a clever icebreaker that reflects your superpowers.",
+  "As a time-traveling adventurer, how would you break the ice with your crush from a different era? Make it funny and charming!",
+  "You're a famous stand-up comedian trying out new material on your crush. Write a hilarious icebreaker that'll leave them laughing.",
+
+  // Creative Scenarios
+  "If you were a food item trying to win over your crush's taste buds, what would you say? Get as cheesy and punny as possible!",
+  "Imagine you're a mischievous genie granting wishes. How would you playfully grant your crush's wish for an unforgettable conversation starter?",
+  "You're a wizard casting a spell to charm your crush. Write a magical icebreaker that's as enchanting as it is amusing.",
+
+  // Unusual Situations
+  "You've accidentally switched bodies with your pet for a day. Write a quirky icebreaker from your pet's perspective to break the ice with your crush.",
+  "If you woke up one morning with the ability to speak only in puns, how would you use your newfound linguistic powers to impress your crush?",
+  "You've been transported into a whimsical fairytale world, and your crush is the protagonist. Come up with a whimsically romantic icebreaker to set the scene.",
+];
+export const dateNightPrompts = [
+  // Romantic Setting Prompts
+  "Imagine you're planning the perfect picnic date under the stars. Describe the romantic setting and the delicious food you'll bring.",
+  "You've booked a private boat tour for your date night. Paint a picture of the breathtaking sunset you'll watch together while cruising on the water.",
+  "Create a cozy scene for a date night at home. Describe the soft candlelight, soothing music, and homemade dinner you'll enjoy together.",
+
+  // Adventurous Activities Prompts
+  "You and your date are embarking on a thrilling adventure in the great outdoors. Describe the exhilarating hike you'll take and the stunning views you'll discover.",
+  "Plan an exciting urban exploration date in the city. Detail the hidden gems you'll uncover and the delicious street food you'll sample along the way.",
+  "Imagine you're taking your date on a spontaneous road trip. Describe the charming towns you'll visit and the memorable experiences you'll share.",
+
+  // Creative Experiences Prompts
+  "You're organizing a fun and quirky date night activity. Describe the whimsical scavenger hunt you've planned and the quirky treasures you'll hunt for together.",
+  "Create an immersive date night experience inspired by your favorite movie. Describe the elaborate movie marathon setup and the themed snacks you'll enjoy.",
+  "Imagine you're hosting a creative DIY date night. Describe the artistic project you'll tackle together and the beautiful masterpiece you'll create as a couple.",
+
+  // Dreamy Escapes Prompts
+  "You're whisking your date away on a dreamy getaway to a secluded cabin in the woods. Describe the tranquil surroundings and the cozy evenings spent by the fireplace.",
+  "Plan a romantic escape to a charming bed and breakfast. Describe the quaint accommodations and the delectable breakfasts you'll indulge in together.",
+  "Imagine you're surprising your date with a luxurious spa day. Describe the pampering treatments you'll enjoy together and the blissful relaxation you'll experience.",
+];
