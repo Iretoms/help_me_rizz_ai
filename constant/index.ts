@@ -77,3 +77,14 @@ export const dateNightPrompts = [
   "Plan a romantic escape to a charming bed and breakfast. Describe the quaint accommodations and the delectable breakfasts you'll indulge in together.",
   "Imagine you're surprising your date with a luxurious spa day. Describe the pampering treatments you'll enjoy together and the blissful relaxation you'll experience.",
 ];
+export const pickUpLinePrompt = [
+  // Romantic Setting Prompts
+  "You can play the role yourself or create a fictional character to embody the persona of a confident yet clueless individual attempting to charm others with outlandish pickup lines.",
+  // Adventurous Activities Prompts
+  "Choose a vibrant location where people are likely to gather, such as a busy city square, a popular coffee shop, or a bustling pedestrian walkway",
+  "Get creative with your pickup lines! Channel the spirit of Andrew Hales and other comedic personalities by crafting lines that are hilariously cringeworthy yet harmless. Think puns, exaggerated compliments, and absurd scenarios",
+  "Imagine you're taking your date on a spontaneous road trip. Describe the charming towns you'll visit and the memorable experiences you'll share.",
+
+  // Creative Experiences Prompts
+
+];
