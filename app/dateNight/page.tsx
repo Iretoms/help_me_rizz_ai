@@ -31,7 +31,7 @@ const Icebreaker = () => {
     try {
       await navigator.clipboard.writeText(dateNightText);
       toast({
-        description: "You date night has been copied",
+        description: "You date night idea has been copied",
       });
     } catch (error) {
       toast({
