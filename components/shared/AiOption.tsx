@@ -38,7 +38,7 @@ const AiOption = () => {
         </Link>
         <Link
           className="cursor-pointer font-bold rounded-2xl flex justify-center items-center"
-          href="/dateNight"
+          href="/flirtyResponse"
         >
           <HoverCard
             divColor="coralDark"
