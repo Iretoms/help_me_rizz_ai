@@ -14,7 +14,7 @@ const firltyResponse = () => {
             placeholder="Enter your message....."
           />
           <Button className="bg-white px-6 rounded-xl hover:text-white">
-            "Add to chat"
+            Add to chat
           </Button>
         </div>
         <div className="flex flex-col md:flex-row gap-10  items-center space-x-2">
@@ -24,9 +24,12 @@ const firltyResponse = () => {
             placeholder="Enter their message....."
           />
           <Button className="bg-white px-6 rounded-xl hover:text-white">
-            "Add to chat"
+            Add to chat
           </Button>
         </div>
+        <Button className="bg-white px-6 rounded-xl hover:text-white">
+          Generate Response
+        </Button>
       </div>
       <div className="relative hidden md:block">
         <Image
