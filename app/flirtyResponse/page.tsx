@@ -1,14 +1,18 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Input } from "@/components/ui/input";
 import { ChatProps } from "@/types";
+import { flirtyResponse } from "@/api";
 
 const FlirtyResponse = () => {
   const [myMessage, setMyMessage] = useState("");
   const [theirMessage, setTheirMessage] = useState("");
   const [messages, setMessages] = useState<ChatProps[]>([]);
+  const [loading, setLoading] = useState(false);
 
   const addMyMessage = () => {
     if (myMessage.trim() !== "") {
@@ -27,6 +31,25 @@ const FlirtyResponse = () => {
         { messages: [], text: theirMessage, position: "left" },
       ]);
       setTheirMessage("");
+    }
+  };
+
+  const generateFlirtyResponse = async () => {
+    try {
+      setLoading(true);
+      const response = await flirtyResponse(myMessage, theirMessage);
+      if (response) {
+        setMessages([
+          ...messages,
+          { messages: [], text: response, position: "right" },
+        ]);
+      } else {
+        console.error("Empty response received from flirtyResponse function.");
+      }
+    } catch (error) {
+      console.error("Error generating flirty response:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -63,8 +86,11 @@ const FlirtyResponse = () => {
             Add to chat
           </Button>
         </div>
-        <Button className="bg-white px-6 rounded-xl hover:text-white">
-          Generate flirty Response
+        <Button
+          onClick={generateFlirtyResponse}
+          className="bg-white px-6 rounded-xl hover:text-white"
+        >
+          {loading ? "Generating response" : "Generate flirty Response"}
         </Button>
       </div>
       <div className="hidden md:block">
@@ -78,8 +104,16 @@ const FlirtyResponse = () => {
           />
           <div className="absolute w-[20rem] right-[8rem] top-[8rem] max-h-[40rem] bg-[#18181B] overflow-y-scroll p-2 flex flex-col justify-start gap-6">
             {messages.map((message, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  ease: "easeIn",
+                  type: "spring",
+                  stiffness: 200,
+                }}
                 className={`flex p-2 rounded-2xl w-full ${
                   message.position === "right" ? "justify-end" : "justify-start"
                 }`}
@@ -99,8 +133,15 @@ const FlirtyResponse = () => {
                     {message.text}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
+            <p>
+              {loading && (
+                <div className="flex justify-end">
+                  <Skeleton className="w-[90%] h-16 bg-gray-500 rounded-2xl" />
+                </div>
+              )}
+            </p>
           </div>
         </div>
       </div>

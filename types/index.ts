@@ -7,5 +7,5 @@ export interface TestimonialProps {
 export interface ChatProps {
     messages:string[]
     position:string
-    text:string
+    text:string 
 }

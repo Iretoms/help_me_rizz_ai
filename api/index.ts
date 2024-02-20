@@ -1,5 +1,9 @@
 import OpenAI from "openai";
-import { icebreakerPrompts , dateNightPrompts , pickUpLinePrompt } from "@/constant";
+import {
+  icebreakerPrompts,
+  dateNightPrompts,
+  pickUpLinePrompt,
+} from "@/constant";
 
 const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
@@ -101,6 +105,42 @@ export const pickUpLine = async () => {
       .map((item) => item.trim())
       .slice(0, 4);
     return dateNightIdeas;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const flirtyResponse = async (
+  myMessage: string,
+  theirMessage: string
+) => {
+  try {
+    const systemContent = `You're in a flirty conversation. 
+    You: ${myMessage}
+    Them: ${theirMessage}
+    Keep the sparks flying with a clever yet flirty response.`;
+
+    const completion = await openai.chat.completions.create({
+      messages: [
+        {
+          role: "system",
+          content: systemContent,
+        },
+        {
+          role: "user",
+          content: theirMessage,
+        },
+        {
+          role: "user",
+          content: myMessage,
+        },
+      ],
+      model: "gpt-3.5-turbo",
+      temperature: 0.7,
+    });
+
+    const responseText = completion.choices[0].message.content;
+      console.log(responseText)
+    return responseText;
   } catch (error) {
     console.log(error);
   }
