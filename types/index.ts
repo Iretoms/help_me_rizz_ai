@@ -9,3 +9,7 @@ export interface ChatProps {
     position:string
     text:string 
 }
+export interface ChatCompletionProps {
+    position:string
+    text:string 
+}

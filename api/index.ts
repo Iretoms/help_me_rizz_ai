@@ -4,6 +4,7 @@ import {
   dateNightPrompts,
   pickUpLinePrompt,
 } from "@/constant";
+import { ChatCompletionProps } from "@/types";
 
 const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
@@ -109,15 +110,15 @@ export const pickUpLine = async () => {
     console.log(error);
   }
 };
-export const flirtyResponse = async (
-  myMessage: string,
-  theirMessage: string
-) => {
+export const flirtyResponse = async (messages:any) => {
   try {
-    const systemContent = `You're in a flirty conversation. 
-    You: ${myMessage}
-    Them: ${theirMessage}
-    Keep the sparks flying with a clever yet flirty response.`;
+    const systemContent = messages.reduce((content:any, message:any) => {
+      if (message.position === "right") {
+        return `${content}\nYou: ${message.text}`;
+      } else {
+        return `${content}\nThem: ${message.text}`;
+      }
+    }, "You're in a flirty conversation, misx rizz and creativity to the conversation.");
 
     const completion = await openai.chat.completions.create({
       messages: [
@@ -125,23 +126,20 @@ export const flirtyResponse = async (
           role: "system",
           content: systemContent,
         },
-        {
+        ...messages.map((message:any) => ({
           role: "user",
-          content: theirMessage,
-        },
-        {
-          role: "user",
-          content: myMessage,
-        },
+          content: message.text,
+        })),
       ],
       model: "gpt-3.5-turbo",
       temperature: 0.7,
     });
 
     const responseText = completion.choices[0].message.content;
-      console.log(responseText)
+    console.log(responseText);
     return responseText;
   } catch (error) {
     console.log(error);
   }
 };
+

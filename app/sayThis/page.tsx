@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { ChatProps } from "@/types";
 import { flirtyResponse } from "@/api";
 
-const FlirtyResponse = () => {
+const sayThis = () => {
   const [myMessage, setMyMessage] = useState("");
   const [theirMessage, setTheirMessage] = useState("");
   const [messages, setMessages] = useState<ChatProps[]>([]);
@@ -86,11 +86,37 @@ const FlirtyResponse = () => {
             Add to chat
           </Button>
         </div>
+        <div className="flex gap-5">
+          <Button
+            onClick={generateFlirtyResponse}
+            className="bg-white px-6 rounded-xl hover:text-white"
+          >
+            {loading ? "Generating response" : "Funny"}
+          </Button>
+          <Button
+            onClick={generateFlirtyResponse}
+            className="bg-white px-6 rounded-xl hover:text-white"
+          >
+            {loading ? "Generating response" : "Non challant"}
+          </Button>
+          <Button
+            onClick={generateFlirtyResponse}
+            className="bg-white px-6 rounded-xl hover:text-white"
+          >
+            {loading ? "Generating response" : "Rizz"}
+          </Button>
+          <Button
+            onClick={generateFlirtyResponse}
+            className="bg-white px-6 rounded-xl hover:text-white"
+          >
+            {loading ? "Generating response" : "Victorian Writer"}
+          </Button>
+        </div>
         <Button
           onClick={generateFlirtyResponse}
           className="bg-white px-6 rounded-xl hover:text-white"
         >
-          {loading ? "Generating response" : "Generate flirty Response"}
+          {loading ? "Generating response" : "Generate Response"}
         </Button>
       </div>
       <div className="hidden md:block">
@@ -149,4 +175,4 @@ const FlirtyResponse = () => {
   );
 };
 
-export default FlirtyResponse;
+export default sayThis;
