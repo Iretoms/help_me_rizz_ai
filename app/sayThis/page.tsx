@@ -88,25 +88,21 @@ const sayThis = () => {
         </div>
         <div className="flex gap-5">
           <Button
-            onClick={generateFlirtyResponse}
             className="bg-white px-6 rounded-xl hover:text-white"
           >
             {loading ? "Generating response" : "Funny"}
           </Button>
           <Button
-            onClick={generateFlirtyResponse}
             className="bg-white px-6 rounded-xl hover:text-white"
           >
             {loading ? "Generating response" : "Non challant"}
           </Button>
           <Button
-            onClick={generateFlirtyResponse}
             className="bg-white px-6 rounded-xl hover:text-white"
           >
             {loading ? "Generating response" : "Rizz"}
           </Button>
           <Button
-            onClick={generateFlirtyResponse}
             className="bg-white px-6 rounded-xl hover:text-white"
           >
             {loading ? "Generating response" : "Victorian Writer"}
