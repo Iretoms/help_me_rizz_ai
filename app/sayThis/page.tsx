@@ -13,6 +13,7 @@ const sayThis = () => {
   const [theirMessage, setTheirMessage] = useState("");
   const [messages, setMessages] = useState<ChatProps[]>([]);
   const [loading, setLoading] = useState(false);
+   const [responseType, setResponseType] = useState<string | null>(null);
 
   const addMyMessage = () => {
     if (myMessage.trim() !== "") {
@@ -88,24 +89,36 @@ const sayThis = () => {
         </div>
         <div className="flex gap-5">
           <Button
-            className="bg-white px-6 rounded-xl hover:text-white"
+            className={`bg-white px-6 rounded-xl hover:text-white ${
+              responseType === "Funny" && "bg-coralDark text-white"
+            }`}
+            onClick={() => setResponseType("Funny")}
           >
-            {loading ? "Generating response" : "Funny"}
+            Funny
           </Button>
           <Button
-            className="bg-white px-6 rounded-xl hover:text-white"
+            onClick={() => setResponseType("Nonchalant")}
+            className={`bg-white px-6 rounded-xl hover:text-white ${
+              responseType === "Nonchalant" && "bg-coralDark text-white"
+            }`}
           >
-            {loading ? "Generating response" : "Non challant"}
+            Non-Challant
           </Button>
           <Button
-            className="bg-white px-6 rounded-xl hover:text-white"
+            onClick={() => setResponseType("Rizz")}
+            className={`bg-white px-6 rounded-xl hover:text-white ${
+              responseType === "Rizz" && "bg-coralDark text-white"
+            }`}
           >
-            {loading ? "Generating response" : "Rizz"}
+            Rizz
           </Button>
           <Button
-            className="bg-white px-6 rounded-xl hover:text-white"
+            onClick={() => setResponseType("Victorian Writer")}
+            className={`bg-white px-6 rounded-xl hover:text-white ${
+              responseType === "Victorian Writer" && "bg-coralDark text-white"
+            }`}
           >
-            {loading ? "Generating response" : "Victorian Writer"}
+            Victorian Writer
           </Button>
         </div>
         <Button
