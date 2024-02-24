@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Input } from "@/components/ui/input";
 import { ChatProps } from "@/types";
-import { flirtyResponse } from "@/api";
+import { generateResponseType } from "@/api";
 
 const sayThis = () => {
   const [myMessage, setMyMessage] = useState("");
@@ -38,7 +38,7 @@ const sayThis = () => {
   const generateFlirtyResponse = async () => {
     try {
       setLoading(true);
-      const response = await flirtyResponse(messages);
+      const response = await generateResponseType(messages ,responseType);
       if (response) {
         setMessages([
           ...messages,

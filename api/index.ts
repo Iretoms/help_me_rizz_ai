@@ -30,7 +30,7 @@ export const icebreaker = async (bioInput: string) => {
         },
         {
           role: "user",
-          content: `${randomPrompt} Here's the bio of my crush: ${bioInput}. List the ideas only.`,
+          content: `${randomPrompt}, so here's their bio: ${bioInput}, so how can i break the ice for a good conversation starter. List the ideas only.`,
         },
       ],
       model: "gpt-3.5-turbo",
@@ -48,6 +48,8 @@ export const icebreaker = async (bioInput: string) => {
     console.log(error);
   }
 };
+
+
 export const dateNight = async () => {
   try {
     const randomPrompt =
@@ -79,6 +81,8 @@ export const dateNight = async () => {
     console.log(error);
   }
 };
+
+
 export const pickUpLine = async () => {
   try {
     const randomPrompt =
@@ -110,6 +114,8 @@ export const pickUpLine = async () => {
     console.log(error);
   }
 };
+
+
 export const flirtyResponse = async (messages:any) => {
   try {
     const systemContent = messages.reduce((content:any, message:any) => {
@@ -119,6 +125,40 @@ export const flirtyResponse = async (messages:any) => {
         return `${content}\nThem: ${message.text}`;
       }
     }, "You're in a flirty conversation, misx rizz and creativity to the conversation.");
+
+    const completion = await openai.chat.completions.create({
+      messages: [
+        {
+          role: "system",
+          content: systemContent,
+        },
+        ...messages.map((message:any) => ({
+          role: "user",
+          content: message.text,
+        })),
+      ],
+      model: "gpt-3.5-turbo",
+      temperature: 0.7,
+    });
+
+    const responseText = completion.choices[0].message.content;
+    console.log(responseText);
+    return responseText;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+export const generateResponseType = async (messages:any , resposneType:any) => {
+  try {
+    const systemContent = messages.reduce((content:any, message:any) => {
+      if (message.position === "right") {
+        return `${content}\nYou: ${message.text}`;
+      } else {
+        return `${content}\nThem: ${message.text}`;
+      }
+    }, `You're in a conversation, act like you are a ${resposneType} person. Beign ${resposneType} are the response you'll make   to the conversation.`);
 
     const completion = await openai.chat.completions.create({
       messages: [
