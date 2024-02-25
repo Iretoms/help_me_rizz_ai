@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useToast } from "@/components/ui/use-toast";
 
-const Icebreaker = () => {
+const PickUpLines = () => {
   const [pickUpLineIdeas, setPickUpLineIdeas] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const { toast } = useToast();
@@ -85,4 +85,4 @@ const Icebreaker = () => {
   );
 };
 
-export default Icebreaker;
+export default PickUpLines;
