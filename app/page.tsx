@@ -12,7 +12,7 @@ export default function Home() {
         <div className="flex relative  overflow-hidden md:p-5 flex-col gap-4 items-start justify-start w-fit">
           <h1 className="text-textGray font-extrabold text-5xl md:text-6xl">
             Let RUMI be your <br />{" "}
-            <span className="text-coralDark">Wingman</span> we've got you.
+            <span className="text-coralDark">Wingman</span> we&apos;ve got you.
           </h1>
           <p className="text-textGray font-extralight text-sm">
             Impress anyone with witty lines & AI-powered rizz responses. Want to

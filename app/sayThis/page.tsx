@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { ChatProps } from "@/types";
 import { generateResponseType } from "@/api";
 
-const sayThis = () => {
+const SayThis = () => {
   const [myMessage, setMyMessage] = useState("");
   const [theirMessage, setTheirMessage] = useState("");
   const [messages, setMessages] = useState<ChatProps[]>([]);
@@ -184,4 +184,4 @@ const sayThis = () => {
   );
 };
 
-export default sayThis;
+export default SayThis;
