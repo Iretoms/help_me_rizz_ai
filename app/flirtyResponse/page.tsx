@@ -55,8 +55,8 @@ const FlirtyResponse = () => {
 
   return (
     <div className="flex justify-center items-start gap-10 px-10">
-      <div className="flex flex-col gap-10 mt-20 w-[40%]">
-        <div className="flex flex-col md:flex-row gap-10  items-center space-x-2">
+      <div className="flex flex-col gap-10 mt-20 w-[100%] md:w-[40%] ">
+        <div className="flex flex-col md:flex-row gap-5 md:gap-10  items-start md:items-center space-x-2">
           <Input
             className="text-white border-opacity-20 rounded-xl border-white placeholder:opacity-30"
             type="text"
@@ -71,7 +71,7 @@ const FlirtyResponse = () => {
             Add to chat
           </Button>
         </div>
-        <div className="flex flex-col md:flex-row gap-10  items-center space-x-2">
+        <div className="flex flex-col md:flex-row gap-5 md:gap-10 items-start  md:items-center space-x-2">
           <Input
             className="text-white border-opacity-20 rounded-xl border-white placeholder:opacity-30"
             type="text"
