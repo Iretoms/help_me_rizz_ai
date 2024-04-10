@@ -13,7 +13,7 @@ const SayThis = () => {
   const [theirMessage, setTheirMessage] = useState("");
   const [messages, setMessages] = useState<ChatProps[]>([]);
   const [loading, setLoading] = useState(false);
-   const [responseType, setResponseType] = useState<string | null>(null);
+  const [responseType, setResponseType] = useState<string | null>(null);
 
   const addMyMessage = () => {
     if (myMessage.trim() !== "") {
@@ -38,7 +38,7 @@ const SayThis = () => {
   const generateFlirtyResponse = async () => {
     try {
       setLoading(true);
-      const response = await generateResponseType(messages ,responseType);
+      const response = await generateResponseType(messages, responseType);
       if (response) {
         setMessages([
           ...messages,
